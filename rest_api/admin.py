@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import MediaItem, Clip
 
-# Register your models here.
+admin.site.register(MediaItem)
+admin.site.register(Clip)
