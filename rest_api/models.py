@@ -13,6 +13,10 @@ class MediaItem(models.Model):
     url = models.URLField(default='', blank=True)
     youtube_id = models.CharField(max_length=200, default='', blank=True)
 
+
+    class Meta:
+        ordering = ('title',)
+
     def __str__(self):
         return self.title
 
@@ -25,4 +29,4 @@ class Clip(models.Model):
     media_item = models.ForeignKey(MediaItem, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{start_time} - {end_time}'
+        return f'{self.start_time} - {self.end_time}'
