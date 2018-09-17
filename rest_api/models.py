@@ -10,9 +10,8 @@ class MediaItem(models.Model):
         ),
         default='youtube'
     )
-    url = models.URLField(default='', blank=True)
+    resource_url = models.URLField(default='', blank=True)
     youtube_id = models.CharField(max_length=200, default='', blank=True)
-
 
     class Meta:
         ordering = ('title',)

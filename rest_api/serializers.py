@@ -2,8 +2,8 @@ from rest_framework import serializers
 from .models import MediaItem, Clip
 
 
-class MediaItemSerializer(serializers.ModelSerializer):
+class MediaItemSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = MediaItem
-        fields = ('title', 'type', 'url', 'youtube_id')
+        fields = ('url', 'id', 'title', 'type', 'resource_url', 'youtube_id')
