@@ -25,7 +25,9 @@ class Clip(models.Model):
     translation = models.TextField(default='')
     start_time = models.CharField(max_length=5, default='00:00')
     end_time = models.CharField(max_length=5, default='00:00')
-    media_item = models.ForeignKey(MediaItem, on_delete=models.CASCADE)
+    media_item = models.ForeignKey(
+        MediaItem, related_name='clips', on_delete=models.CASCADE
+    )
 
     def __str__(self):
         return f'{self.start_time} - {self.end_time}'
