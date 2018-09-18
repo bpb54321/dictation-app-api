@@ -8,7 +8,7 @@ class ClipSerializer(serializers.HyperlinkedModelSerializer):
         model = Clip
         fields = (
             'url', 'id', 'transcription', 'translation', 'start_time',
-            'end_time'
+            'end_time', 'media_item'
         )
 
 
@@ -21,10 +21,3 @@ class MediaItemSerializer(serializers.HyperlinkedModelSerializer):
             'url', 'id', 'title', 'type', 'resource_url', 'youtube_id',
             'clips',
         )
-
-    def create(self, validated_data):
-        clips_data = validated_data.pop('clips')
-        media_item = MediaItem.objects.create(**validated_data)
-        for clip_data in clips_data:
-            Clip.objects.create(media_item=media_item, **clip_data)
-        return clip
