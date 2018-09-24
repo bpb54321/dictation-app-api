@@ -1,3 +1,4 @@
 {
-  "python.pythonPath": "/Users/brianblosser/.local/share/virtualenvs/django-rest-framework-WzW1micl/bin/python"
+  "python.pythonPath": "/Users/brianblosser/.local/share/virtualenvs/django-rest-framework-WzW1micl/bin/python",
+  "python.linting.pep8Args": ["--config", "setup.cfg",]
 }

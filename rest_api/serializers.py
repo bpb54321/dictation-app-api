@@ -7,8 +7,10 @@ class ClipSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Clip
         fields = (
-            'url', 'id', 'transcription', 'translation', 'start_time',
-            'end_time', 'media_item'
+            'url', 'id', 'transcription', 'translation',
+            'start_hours', 'start_minutes', 'start_seconds',
+            'end_hours', 'end_minutes', 'end_seconds',
+            'media_item'
         )
 
 

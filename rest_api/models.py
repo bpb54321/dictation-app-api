@@ -23,8 +23,12 @@ class MediaItem(models.Model):
 class Clip(models.Model):
     transcription = models.TextField(default='')
     translation = models.TextField(default='')
-    start_time = models.CharField(max_length=5, default='00:00')
-    end_time = models.CharField(max_length=5, default='00:00')
+    start_hours = models.IntegerField(default=0)
+    start_minutes = models.IntegerField(default=0)
+    start_seconds = models.IntegerField(default=0)
+    end_hours = models.IntegerField(default=0)
+    end_minutes = models.IntegerField(default=0)
+    end_seconds = models.IntegerField(default=0)
     media_item = models.ForeignKey(
         MediaItem, related_name='clips', on_delete=models.CASCADE
     )
